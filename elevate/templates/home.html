@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to my Restful API</h1>
+    <ul>
+        <li><a href="/products">Products</a></li>
+        <li>
+            <form id="productForm">
+                <label for="productId">Product ID:</label>
+                <input type="text" id="productId" name="productId" required>
+                <button type="submit">Go to Product</button>
+            </form>
+        </li>
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var productId = document.getElementById('productId').value;
+            window.location.href = '/product/' + productId;
+        });
+    </script>
+</body>
+</html>
